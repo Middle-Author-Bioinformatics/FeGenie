@@ -1446,7 +1446,7 @@ def main():
             # os.system("rm %s/*blast" % outDirectory)
             # os.system("rm %s/FinalSummary.csv" % outDirectory)
             # os.system("rm %s/FinalSummary-dereplicated-clustered.csv" % outDirectory)
-            # os.system("mv %s/FinalSummary-dereplicated-clustered-blast-filtered.csv %s/FeGenie-summary.csv" % (outDirectory, outDirectory))
+            os.system("mv %s/FinalSummary-dereplicated-clustered-blast-filtered.csv %s/FeGenie-summary.csv" % (outDirectory, outDirectory))
 
             # OPTIONAL CROSS-VALIDATION AGAINST REFERENCE DATABASE
             if args.ref != "NA":
