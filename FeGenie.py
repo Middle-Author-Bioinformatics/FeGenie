@@ -1440,13 +1440,13 @@ def main():
             time.sleep(5)
 
             # REMOVING FILES
-            os.system("rm %s/GeoThermin.csv" % outDirectory)
-            os.system("rm %s/*summary*" % outDirectory)
-            os.system("rm %s/FinalSummary-dereplicated-clustered-blast.csv" % outDirectory)
-            os.system("rm %s/*blast" % outDirectory)
-            os.system("rm %s/FinalSummary.csv" % outDirectory)
-            os.system("rm %s/FinalSummary-dereplicated-clustered.csv" % outDirectory)
-            os.system("mv %s/FinalSummary-dereplicated-clustered-blast-filtered.csv %s/FeGenie-summary.csv" % (outDirectory, outDirectory))
+            # os.system("rm %s/GeoThermin.csv" % outDirectory)
+            # os.system("rm %s/*summary*" % outDirectory)
+            # os.system("rm %s/FinalSummary-dereplicated-clustered-blast.csv" % outDirectory)
+            # os.system("rm %s/*blast" % outDirectory)
+            # os.system("rm %s/FinalSummary.csv" % outDirectory)
+            # os.system("rm %s/FinalSummary-dereplicated-clustered.csv" % outDirectory)
+            # os.system("mv %s/FinalSummary-dereplicated-clustered-blast-filtered.csv %s/FeGenie-summary.csv" % (outDirectory, outDirectory))
 
             # OPTIONAL CROSS-VALIDATION AGAINST REFERENCE DATABASE
             if args.ref != "NA":
