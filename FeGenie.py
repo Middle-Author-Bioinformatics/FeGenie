@@ -512,8 +512,38 @@ def main():
     for i in file:
         HMMdir = i.rstrip()
 
-    bits = "/home/ec2-user/bin/FeGenie/hmms/iron/HMM-bitcutoffs.txt"
-    rscriptDir = "/home/ec2-user/bin/FeGenie/rscripts/"
+    bits = HMMdir + "/" + "HMM-bitcutoffs.txt"
+
+    file = open("rscripts.txt")
+    rscriptDir = ""
+    for i in file:
+        rscriptDir = i.rstrip()
+
+    try:
+        test = open(bits)
+
+    except FileNotFoundError:
+        os.system("which FeGenie.py > mainDir.txt")
+
+        file = open("mainDir.txt")
+        for i in file:
+            location = i.rstrip()
+        location = allButTheLast(location, "/")
+
+        HMMdir = location + "/hmms/iron/"
+        bits = HMMdir + "/" + "HMM-bitcutoffs.txt"
+        rscriptDir = location + "/rscripts/"
+
+        try:
+            test = open(bits)
+        except FileNotFoundError:
+            print("FeGenie could not locate the required directories. Please run the setup.sh script if "
+                  "you have Conda installed. Otherwise, please run the setupe-noconda.sh script and put FeGenie.py into your $PATH")
+            raise SystemExit
+
+        os.system("rm mainDir.txt")
+
+    os.system("rm -f HMMlib.txt rscripts.txt")
 
     if len(sys.argv) == 1:
         parser.print_help(sys.stderr)
