@@ -513,6 +513,7 @@ def main():
         HMMdir = i.rstrip()
 
     bits = HMMdir + "/" + "HMM-bitcutoffs.txt"
+    print(HMMdir)
 
     file = open("rscripts.txt")
     rscriptDir = ""
@@ -759,7 +760,7 @@ def main():
         metaDict[ls[0]] = ls[1]
 
     # ******************* BEGINNING MAIN ALGORITHM **********************************))))
-    HMMdir = "/home/ec2-user/bin/FeGenie/hmms/iron/"
+    # HMMdir = "/home/ec2-user/bin/FeGenie/hmms/iron/"
     if not args.skip:
         if args.cat == "NA":
             catList = []
